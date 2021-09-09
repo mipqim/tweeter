@@ -1,0 +1,28 @@
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-weight: bold;
+}
+
+.new-tweet textarea {
+  border: 0;
+  color: #545149;
+  background-color: #f4f1ec;
+  border-bottom: 0.2em solid;
+}
+
+.new-tweet form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+  margin-top: 0.5em;
+  width: 100%;
+}
+
+.new-tweet form div button {
+  border: 0;
+  color: #ffffff;
+  background-color: #4056A1;
+}
