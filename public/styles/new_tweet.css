@@ -26,3 +26,7 @@
   color: #ffffff;
   background-color: #4056A1;
 }
+
+.overlimit {
+  color: red;
+}
