@@ -7,7 +7,7 @@
 }
 
 .tweet-container:hover {
-  box-shadow: 0.2em 0.2em 0.2em  rgb(0, 0, 255);
+  box-shadow: 0.2em 0.2em 0.2em #4056A1;
 }
 
 .tweet-header {
@@ -27,7 +27,6 @@
 .tweet-usrimg {
   width: 3em;
   height: 3em;
-  position: relative;
   overflow: hidden;
   border-radius: 50%;
   margin-right: 0.5em;
@@ -72,10 +71,10 @@
 }
 
 .tweet-footer > div > a:link {
-  color:#4056A1;;
+  color:#4056A1;
 }
 .tweet-footer > div > a:visited {
-  color:#4056A1;;
+  color:#4056A1;
 }
 .tweet-footer > div > a:hover {
   color:tan;
