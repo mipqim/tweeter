@@ -1,0 +1,82 @@
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  border: 0.2em solid;
+  margin-top: 2em;
+  padding: 0.5em;
+}
+
+.tweet-container:hover {
+  box-shadow: 0.2em 0.2em 0.2em  rgb(0, 0, 255);
+}
+
+.tweet-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tweet-header > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tweet-usrimg {
+  width: 3em;
+  height: 3em;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
+.tweet-usrimg > img {
+  display: inline;
+  margin: 0;
+  height: 100%;
+  width: auto;
+}
+
+.tweet-userid {
+  color: silver;
+}
+
+.tweet-msg {
+  border-bottom: 0.2em solid;
+}
+
+.tweet-msg {
+  height: 3em;
+  padding: 0.5em;
+  margin: 0em;
+  margin-top: 0.5em;
+  align-items: center;
+}
+
+.tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7em;
+  padding: 0.7em;
+}
+
+.tweet-footer > div > a{
+  float: right;
+  padding-left: 0.5em;
+  text-decoration:none;
+}
+
+.tweet-footer > div > a:link {
+  color:#4056A1;;
+}
+.tweet-footer > div > a:visited {
+  color:#4056A1;;
+}
+.tweet-footer > div > a:hover {
+  color:tan;
+}
