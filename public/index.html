@@ -41,7 +41,7 @@
     <!-- Top nav bar (fixed) -->
     <nav class="nav-bar">
       <span class="textlogo">tweeter</span>
-      <div class="newtweet">
+      <div id="toggle-new-tweet" class="newtweet">
         <span><b>Write</b> a new tweet</span>
         <i class="fas fa-angle-double-down" style="color: red;"></i>
       </div>
@@ -53,13 +53,16 @@
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+          <h2>Name</h2>
       </div>
     </header>    
 
-    <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="error-message hidden">
+          <span></span>
+        </div>
+
         <form method="POST" id="new-tweet-form" action="http://localhost:8080/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -72,6 +75,7 @@
       
       <article id="tweets-container">
       </article>
+      <a id="move-to-top" href="#"><i class="fas fa-arrow-circle-up fa-3x"></i></a>
     </main>
   </body>
 </html>

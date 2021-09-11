@@ -43,10 +43,16 @@ const createTweetElement = function(tweet) {
     return div.innerHTML;
   }
 
-  const pageInit = function(){
+  const pageInit = function() {
     $('#tweets-container').empty();   
     $('#tweet-text').val('');   
     $('#new-tweet-form .counter').text('140');
+    hideError();
+  }
+
+  const hideError = function() {
+    $('.new-tweet .error-message').hide();
+    $('.new-tweet .error-message > span').text('');
   }
 
  const loadTweets = function(){
@@ -55,6 +61,13 @@ const createTweetElement = function(tweet) {
     renderTweets(data.reverse());
   });
  }
+
+ function showErrorMessage(message) {
+  hideError();
+  $('.new-tweet .error-message').slideDown('fast', () => {
+    $('.new-tweet .error-message > span').text(message);
+  });
+}
 
  $(document).ready(() => {  
 
@@ -65,10 +78,10 @@ const createTweetElement = function(tweet) {
 
     const charsNum = $('#tweet-text').val().length;
     if (charsNum > 140) {
-      alert('Your tweet is too long');
+      showErrorMessage('Too long. The limit of chars is 140.');
       return;
     } else if (charsNum === 0) {
-      alert('No data of tweet');
+      showErrorMessage('Tweet is empty');
       return;
     }
 
@@ -79,6 +92,33 @@ const createTweetElement = function(tweet) {
     });
   });
 
+  $('#toggle-new-tweet').click((event) => {
+    $('.new-tweet').slideToggle(300, () => {
+      if ($(".new-tweet").is(":visible")) {
+        $('#tweet-text').focus(); 
+        $('#toggle-new-tweet > span').css({ "margin-bottom" : "0.8em"});        
+      } else {
+        $('#toggle-new-tweet > span').css({ "margin-bottom" : "0em"});
+      }
+    });
+  });
 
+  // $(() => {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+            $('#move-to-top').fadeIn();
+        } else {
+            $('#move-to-top').fadeOut();
+        }
+    });
+     
+    $("#move-to-top").click(function() {
+        $('html, body').animate({
+            scrollTop : 0
+        }, 400);
+        return false;
+    });
+  // });
+  
 
 });
