@@ -22,7 +22,7 @@ const createTweetElement = function(tweet) {
      </div>
       <span class="tweet-userid">${tweet.user.handle}</span>
     </header>
-    <p class="tweet-msg">${tweet.content.text}</p>
+    <p class="tweet-msg">${escape(tweet.content.text)}</p>
     <footer class="tweet-footer">
       <span>${timeago.format(tweet.created_at)}</span>
       <div>
@@ -37,11 +37,17 @@ const createTweetElement = function(tweet) {
   return tweetHtml;
   }
 
- const pageInit = function(){
-  $('#tweets-container').empty();   
-  $('#tweet-text').val('');   
-  $('#new-tweet-form .counter').text('140');
- }
+  const escape = (str) => {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  const pageInit = function(){
+    $('#tweets-container').empty();   
+    $('#tweet-text').val('');   
+    $('#new-tweet-form .counter').text('140');
+  }
 
  const loadTweets = function(){
   $.get('http://localhost:8080/tweets', (data) => {
