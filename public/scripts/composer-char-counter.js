@@ -4,7 +4,6 @@ $(document).ready(function() {
 
   $(".new-tweet textarea").on("input", function(event) {  
     const charNum = maxChar - this.textLength;    
-    // $(".counter", ".new-tweet").text(display);
     $(".counter", $(this).parent()).text(charNum);
 
     if (charNum < 0) {

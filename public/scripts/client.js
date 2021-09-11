@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 const renderTweets = function(tweets) {
   for(const tweetDate of tweets) {
     $('#tweets-container').append(createTweetElement(tweetDate));
@@ -103,22 +97,18 @@ const createTweetElement = function(tweet) {
     });
   });
 
-  // $(() => {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 500) {
-            $('#move-to-top').fadeIn();
-        } else {
-            $('#move-to-top').fadeOut();
-        }
-    });
-     
-    $("#move-to-top").click(function() {
-        $('html, body').animate({
-            scrollTop : 0
-        }, 400);
-        return false;
-    });
-  // });
-  
-
+  $(window).scroll(function() {
+      if ($(this).scrollTop() > 500) {
+          $('#move-to-top').fadeIn();
+      } else {
+          $('#move-to-top').fadeOut();
+      }
+  });
+   
+  $("#move-to-top").click(function() {
+      $('html, body').animate({
+          scrollTop : 0
+      }, 400);
+      return false;
+  });
 });
