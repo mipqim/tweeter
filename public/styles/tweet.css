@@ -1,4 +1,8 @@
-.tweet-container {
+#tweets-container {
+  margin-bottom: 2em;
+}
+
+.tweet-individual-container {
   display: flex;
   flex-direction: column;
   border: 0.2em solid;
@@ -6,7 +10,7 @@
   padding: 0.5em;
 }
 
-.tweet-container:hover {
+.tweet-individual-container:hover {
   box-shadow: 0.2em 0.2em 0.2em #4056A1;
 }
 
