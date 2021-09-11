@@ -33,7 +33,6 @@ const renderTweets = function(tweets) {
   for(const tweetDate of tweets) {
     $('#tweets-container').append(createTweetElement(tweetDate));
   }
-  console.log($('#tweets-container'));
 }
 
 const createTweetElement = function(tweet) {
@@ -63,6 +62,32 @@ const createTweetElement = function(tweet) {
   return tweetHtml;
   }
 
-$(document).ready(() => {  
-  renderTweets(data);
+ const loadTweets = function(){
+  $.get('http://localhost:8080/tweets', (err, data) => {
+    $('#tweets-container').empty();
+    console.log(data);
+    renderTweets(data);
+  });
+ }
+
+ $(document).ready(() => {  
+
+  $('#new-tweet-form').submit((event) => {
+    event.preventDefault();
+
+    $.post('http://localhost:8080/tweets', $('#new-tweet-form').serialize(), (err, data) => {
+      // $('#tweets-container').empty();
+      // renderTweets(data);
+      console.log(data);
+      console.log(err);
+      if(!err) {
+        console.log('get tweets');
+        loadTweets();
+      }
+
+    });
+  });
+
+
+
 });
