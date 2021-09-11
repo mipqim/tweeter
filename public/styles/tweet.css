@@ -48,6 +48,7 @@
 }
 
 .tweet-msg {
+  width: 100%;
   border-bottom: 0.2em solid;
 }
 

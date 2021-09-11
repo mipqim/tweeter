@@ -57,6 +57,15 @@ const createTweetElement = function(tweet) {
   $('#new-tweet-form').submit((event) => {
     event.preventDefault();
 
+    const charsNum = $('#tweet-text').val().length;
+    if (charsNum > 140) {
+      alert('Your tweet is too long');
+      return;
+    } else if (charsNum === 0) {
+      alert('No data of tweet');
+      return;
+    }
+
     $.post('http://localhost:8080/tweets', $('#new-tweet-form').serialize(), (err, data) => {
       if(!err) {
         loadTweets();
