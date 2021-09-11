@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 const renderTweets = function(tweets) {
   for(const tweetDate of tweets) {
     $('#tweets-container').append(createTweetElement(tweetDate));
@@ -62,29 +37,30 @@ const createTweetElement = function(tweet) {
   return tweetHtml;
   }
 
+ const pageInit = function(){
+  $('#tweets-container').empty();   
+  $('#tweet-text').val('');   
+  $('#new-tweet-form .counter').text('140');
+ }
+
  const loadTweets = function(){
-  $.get('http://localhost:8080/tweets', (err, data) => {
-    $('#tweets-container').empty();
-    console.log(data);
-    renderTweets(data);
+  $.get('http://localhost:8080/tweets', (data) => {
+    pageInit();    
+    renderTweets(data.reverse());
   });
  }
 
  $(document).ready(() => {  
 
+  loadTweets();
+
   $('#new-tweet-form').submit((event) => {
     event.preventDefault();
 
     $.post('http://localhost:8080/tweets', $('#new-tweet-form').serialize(), (err, data) => {
-      // $('#tweets-container').empty();
-      // renderTweets(data);
-      console.log(data);
-      console.log(err);
       if(!err) {
-        console.log('get tweets');
         loadTweets();
       }
-
     });
   });
 
