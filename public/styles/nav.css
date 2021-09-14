@@ -1,35 +1,26 @@
 .nav-bar {
   position: fixed;
-  top: 0;  
-  display:flex; 
+  top: 0;
+  display: flex;
   height: 120px;
   width: 100%;
-  background-color: sandybrown; 
-  background-image: url('/images/greyzz.png');
+  background-color: sandybrown;
+  background-image: url("/images/greyzz.png");
   color: #FFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
   padding-bottom: 0.3em;
-  align-items: flex-end;  
+  align-items: flex-end;
   justify-content: space-between;
 }
-
-nav > span {
-  font-family: 'Bungee', cursive;
-}
-
-#toggle-new-tweet > span {
-  margin-bottom : 0.8em;
-}
-
 .nav-bar .textlogo {
   font-size: 2em;
   padding-bottom: 0.2em;
+  font-family: "Bungee", cursive;
 }
-
 .nav-bar .newtweet {
   font-size: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
@@ -37,14 +28,16 @@ nav > span {
   height: 100%;
   padding-top: 1.5em;
 }
-
-.newtweet:hover{
-  cursor: pointer; 
+.nav-bar .newtweet span {
+  margin-bottom: 0.8em;
+}
+.nav-bar .newtweet:hover {
+  cursor: pointer;
 }
 
 /* Another tablet breakpoint is maximum width of 1024px */
 @media only screen and (min-width: 1024px) {
-  .nav-bar  {
+  .nav-bar {
     background-color: #4056A1;
     background-image: none;
   }

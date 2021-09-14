@@ -1,23 +1,7 @@
-#tweets-container .hidden{
+.container #tweets-container .hidden {
   margin-bottom: 2em;
 }
-
-.new-tweet .hidden {
-  display: none;
-}
-
-.new-tweet .error-message {
-  border: 0.2em solid red;
-  color: red;
-  padding: 1em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  height: 100%;
-  text-align: center;  
-  font-weight: bold;
-}
-
-.tweet-individual-container {
+.container #tweets-container .tweet-individual-container {
   display: flex;
   flex-direction: column;
   border: 0.2em solid;
@@ -25,45 +9,35 @@
   padding: 0.5em;
   width: 100%;
 }
-
-.tweet-individual-container:hover {
-  box-shadow: 0.2em 0.2em 0.2em #4056A1;
-}
-
-.tweet-header {
+.container #tweets-container .tweet-individual-container .tweet-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-
-.tweet-header > div {
+.container #tweets-container .tweet-individual-container .tweet-header div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-
-.tweet-usrimg {
+.container #tweets-container .tweet-individual-container .tweet-header div .tweet-usrimg {
   width: 3em;
   height: 3em;
   overflow: hidden;
   border-radius: 50%;
   margin-right: 0.5em;
 }
-
-.tweet-usrimg > img {
+.container #tweets-container .tweet-individual-container .tweet-header div .tweet-usrimg img {
   display: inline;
   margin: 0;
   height: 100%;
   width: auto;
 }
-
-.tweet-userid {
+.container #tweets-container .tweet-individual-container .tweet-header .tweet-userid {
   color: silver;
 }
-
-.tweet-msg {
+.container #tweets-container .tweet-individual-container .tweet-msg {
   height: 3.5em;
   width: 100%;
   padding: 0.5em;
@@ -71,10 +45,9 @@
   align-items: center;
   border-bottom: 0.2em solid;
   overflow: auto;
-  overflow-wrap: break-word; 
+  overflow-wrap: break-word;
 }
-
-.tweet-footer {
+.container #tweets-container .tweet-individual-container .tweet-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -82,11 +55,22 @@
   font-size: 0.7em;
   padding: 0.7em;
 }
-
-.tweet-footer > div > a{
+.container #tweets-container .tweet-individual-container .tweet-footer div a {
   float: right;
   padding-left: 0.5em;
-  text-decoration:none;
+  text-decoration: none;
+}
+.container #tweets-container .tweet-individual-container .tweet-footer div a:link {
+  color: #4056A1;
+}
+.container #tweets-container .tweet-individual-container .tweet-footer div a:visited {
+  color: #4056A1;
+}
+.container #tweets-container .tweet-individual-container .tweet-footer div a:hover {
+  color: tan;
+}
+.container #tweets-container .tweet-individual-container:hover {
+  box-shadow: 0.2em 0.2em 0.2em #4056A1;
 }
 
 a#move-to-top {
@@ -96,14 +80,4 @@ a#move-to-top {
   display: none;
   z-index: 999;
   color: red;
-}
-
-.tweet-footer > div > a:link {
-  color:#4056A1;
-}
-.tweet-footer > div > a:visited {
-  color:#4056A1;
-}
-.tweet-footer > div > a:hover {
-  color:tan;
 }
