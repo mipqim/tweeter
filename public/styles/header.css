@@ -9,3 +9,13 @@
   background-color: sandybrown; 
   background-image: url('/images/greyzz.png');
 }
+
+  /* Another tablet breakpoint is maximum width of 1024px */
+  @media only screen and (min-width: 1024px) {
+    .avatar {
+      position: fixed;
+      width: 40%;      
+      float: left;
+      margin-top: 140px;
+    }
+  }
